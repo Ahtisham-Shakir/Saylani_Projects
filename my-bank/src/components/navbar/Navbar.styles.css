@@ -1,0 +1,33 @@
+#timer{
+    background-color: #039be5;
+    color: white;
+    text-align: center;
+}
+#navbar{
+    background-color: #1565c0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 16%;
+}
+
+#logo{
+    color:white;
+    font-size: 32px;
+    font-weight: 300;
+    text-decoration: none;
+}
+#nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+#nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 20px 20px;
+}
+#nav-links a:hover{
+background-color: #0251ac;
+}
