@@ -1,0 +1,36 @@
+.form-container{
+    width: 70%;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 60px;
+}
+.heading{
+    background-color: #039be5;
+    text-align: center;
+    padding: 10px 0;
+}
+.heading h1{
+    color: white;
+    font-size: 34px;
+    margin: 0;
+}
+.heading p{
+    margin: 0;
+}
+
+.form-control{
+    width: 50%;
+    float: left;
+    margin: 20px 0;
+}
+input,select{
+    width: 90%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(49, 49, 49) ;
+    padding: 8px 0;
+    font-size: 16px;
+}
+input:focus,select:focus{
+    outline: none;
+}

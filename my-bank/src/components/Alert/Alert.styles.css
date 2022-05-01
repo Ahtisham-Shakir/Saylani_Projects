@@ -1,0 +1,16 @@
+.alert{
+    width: 550px;
+    padding: 2px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.success{
+    background-color: green;
+}
+.danger{
+    background-color: #e57373;
+}

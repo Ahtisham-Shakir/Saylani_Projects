@@ -1,7 +1,7 @@
 import React from "react";
 import './SubAccounts.styles.css';
 import { useGlobalContext } from "../../context";
-
+import { Link } from "react-router-dom";
 
 const SubAccounts = () => {
     const {accountsList} = useGlobalContext();
@@ -11,8 +11,8 @@ const SubAccounts = () => {
             <h4>Accounts</h4>
             <hr />
             <div className="btn-container">
-                <button className="btn btn-primary">Add New Accounts</button>
-                <button className="btn btn-secondary">View All Accounts</button>
+                <Link to="/accounts/create" className="btn btn-primary">Add New Accounts</Link>
+                <Link to="/transactions" className="btn btn-secondary">View All Accounts</Link>
             </div>
             <hr />
             <div className="info">

@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../../context";
+import {Link} from 'react-router-dom';
 
 const SubTransactions = () => {
     const {transactionList} = useGlobalContext();
@@ -8,7 +9,7 @@ const SubTransactions = () => {
             <h4>Transactions</h4>
             <hr />
             <div className="btn-container">
-                <button className="btn btn-secondary">View All Transactions</button>
+                <Link to='/transactions' className="btn btn-secondary">View All Transactions</Link>
             </div>
             <hr />
             <div className="info">
