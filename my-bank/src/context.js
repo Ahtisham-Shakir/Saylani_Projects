@@ -28,7 +28,7 @@ const AppProvider = ({children})=>{
 
     const [accountsList, setAccountsList] = useState(getAccounts());
     const [transactionList, setTransactionList] = useState(getTransactions());
-    const [alert,setAlert] = useState({show:true, type:'danger',msg:'This is alert'});
+    const [alert,setAlert] = useState({show:false, type:'',msg:''});
 
 
     // Every time accountsList or transactionList changes this function will run

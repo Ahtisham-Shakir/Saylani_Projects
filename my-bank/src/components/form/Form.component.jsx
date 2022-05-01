@@ -12,7 +12,7 @@ const Form = () => {
     const [deposit, setDeposit] = useState('');
 
     // 
-    const { accountsList, setAccountsList, transactionList, setTransactionList } = useGlobalContext();
+    const { accountsList, setAccountsList, transactionList, setTransactionList,showAlert } = useGlobalContext();
 
     // When user Submit form this function will run
     const handleSubmit = (e) => {
@@ -26,6 +26,7 @@ const Form = () => {
         setAccountsList([...accountsList, newAccount]);
         const newTransaction = {id,time,registered,accountNumber,type:'credit',deposit};
         setTransactionList([...transactionList,newTransaction]);
+        showAlert(true,'success','Your account has been added successfully');
 
     }
 
