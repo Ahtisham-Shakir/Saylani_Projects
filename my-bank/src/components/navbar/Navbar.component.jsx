@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Navbar.styles.css';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [time, setTime] = useState(new Date().toString().slice(0, 24));
@@ -15,9 +16,9 @@ const Navbar = () => {
             <nav id="navbar">
                 <a id="logo" href="/">My Bank</a>
                 <ul id="nav-links">
-                    <li><a href="/">Dashboard</a></li>
-                    <li><a href="/">Accounts</a></li>
-                    <li><a href="/">Transactions</a></li>
+                    <li><Link to="/">Dashboard</Link></li>
+                    <li><Link to="/accounts">Accounts</Link></li>
+                    <li><Link to="/transactions">Transactions</Link></li>
                 </ul>
             </nav>
         </header>

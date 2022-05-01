@@ -10,6 +10,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Accounts from "./pages/accounts/Accounts";
 
 const App = () => {
   const {alert} = useGlobalContext();
@@ -20,6 +21,7 @@ const App = () => {
         {alert.show && <Alert/> }
         <Switch>
           <Route exact path="/"> <Dashboard /> </Route>
+          <Route exact path="/accounts"> <Accounts /> </Route>
           <Route path="/transactions"> <Transactions/> </Route>
           <Route path="/accounts/create"> <Form/> </Route>
         </Switch>
