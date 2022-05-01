@@ -24,7 +24,7 @@ const Accounts = () => {
                     </div>
                     <hr />
                 </div>
-                : <Table list={accountsList} headings={headings} />
+                : <Table list={accountsList} headings={headings} page='accounts' />
             }
         </div>
     )

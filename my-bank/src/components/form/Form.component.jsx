@@ -21,7 +21,7 @@ const Form = () => {
         const date = new Date();
         const registered = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
         const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-        const id = `${date.getMilliseconds()}`;
+        const id = `${date.getTime()}`;
         const newAccount = { branchCode, accountNumber, name, registered ,accountType,deposit};
         setAccountsList([...accountsList, newAccount]);
         const newTransaction = {id,time,registered,accountNumber,type:'credit',deposit};
