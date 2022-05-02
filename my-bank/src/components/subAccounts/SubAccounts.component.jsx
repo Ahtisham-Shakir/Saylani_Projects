@@ -12,7 +12,7 @@ const SubAccounts = () => {
             <hr />
             <div className="btn-container">
                 <Link to="/accounts/create" className="btn btn-primary">Add New Accounts</Link>
-                <Link to="/transactions" className="btn btn-secondary">View All Accounts</Link>
+                <Link to="/accounts" className="btn btn-secondary">View All Accounts</Link>
             </div>
             <hr />
             <div className="info">

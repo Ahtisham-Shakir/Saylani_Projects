@@ -42,6 +42,55 @@ const AppProvider = ({children})=>{
       setAlert({show,type,msg});
     }
 
+     // Function to for validation
+     const validate = (objToValidate) => {
+      const { branchCode, accountNumber, cnic, deposit } = objToValidate;
+      let flag = true;
+
+      // If any of field is empty then alert will be shown
+      if (true) {
+          for (const key in objToValidate) {
+              if (objToValidate[key] === '') {
+                  showAlert(true, 'danger', 'Please fill all the fields');
+                  flag = false;
+                  return false;
+              }
+
+          }
+      }
+
+      if (cnic.length !== 13) {
+          showAlert(true, 'danger', 'Incorrect CNIC Number');
+          flag = false;
+          return false;
+      }
+
+      if (branchCode > 99) {
+          showAlert(true, 'danger', 'Branch Code should be 1 - 99');
+          flag = false;
+          return false;
+      }
+
+      if (accountNumber.length !== 9) {
+          showAlert(true, 'danger', 'Account Number length should be 9');
+          flag = false;
+          return false;
+      }
+
+      if (deposit < 500) {
+          showAlert(true, 'danger', 'Minimum deposit is 500');
+          flag = false;
+          return false;
+      }
+
+      // If all above conditions are true then function return true
+      if (flag) {
+          return true;
+      }
+
+  }
+
+
     return <AppContext.Provider value={{
         accountsList,
         setAccountsList,
@@ -49,6 +98,7 @@ const AppProvider = ({children})=>{
         setTransactionList,
         alert,
         showAlert,
+        validate,
     }}>{children}</AppContext.Provider>
 }
 
