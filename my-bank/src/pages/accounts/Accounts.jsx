@@ -11,8 +11,8 @@ const Accounts = () => {
     return (
         <div className="info-container">
             <div className="link-container">
-                <Link to='/' className="btn btn-secondary">back to dashboard</Link>
-                <Link to='/account/create' className="btn btn-secondary">create account</Link>
+                <Link  to='/' className="btn btn-secondary">back to dashboard</Link>
+                <Link to='/accounts/create' className="btn btn-secondary">create account</Link>
             </div>
             <h1>Accounts</h1>
             {accountsList.length === 0 ?

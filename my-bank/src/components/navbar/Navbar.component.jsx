@@ -14,7 +14,7 @@ const Navbar = () => {
         <header>
             <div id="timer">{time}</div>
             <nav id="navbar">
-                <a id="logo" href="/">My Bank</a>
+                <Link id="logo" to="/">My Bank</Link>
                 <ul id="nav-links">
                     <li><Link to="/">Dashboard</Link></li>
                     <li><Link to="/accounts">Accounts</Link></li>

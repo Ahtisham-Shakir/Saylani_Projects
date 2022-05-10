@@ -7,24 +7,25 @@ import { useGlobalContext } from "./context";
 import Alert from "./components/Alert/Alert";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 import Accounts from "./pages/accounts/Accounts";
 
 const App = () => {
-  const {alert} = useGlobalContext();
+  const { alert } = useGlobalContext();
   return (
     <>
       <Router>
         <Navbar />
-        {alert.show && <Alert/> }
-        <Switch>
-          <Route exact path="/"> <Dashboard /> </Route>
-          <Route exact path="/accounts"> <Accounts /> </Route>
-          <Route path="/transactions"> <Transactions/> </Route>
-          <Route path="/accounts/create"> <Form/> </Route>
-        </Switch>
+        {alert.show && <Alert />}
+        <Routes>
+
+          <Route index path="/" element={<Dashboard />} />
+          <Route exact path="/accounts" element={<Accounts />} />
+          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/accounts/create" element={<Form />} />
+        </Routes>
       </Router>
     </>
   )
