@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { firestore } from '../config/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore/lite';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useGlobalContext } from '../context';
 
 const Add = () => {

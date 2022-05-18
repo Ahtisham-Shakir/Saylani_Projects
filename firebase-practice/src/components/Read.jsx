@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { firestore } from '../config/firebase'
-import { collection, deleteDoc, getDocs, doc } from 'firebase/firestore/lite'
+import { collection, deleteDoc, getDocs, doc, onSnapshot } from 'firebase/firestore'
 import { useGlobalContext } from '../context';
 
 const Read = () => {
@@ -11,20 +11,32 @@ const Read = () => {
 
     const { showAlert } = useGlobalContext();
 
-    const readDocs = async () => {
-        let array = [];
-
-        const querySnapshot = await getDocs(collectionRef);
-        querySnapshot.forEach(docs => {
-            array.push({ ...docs.data(), id: docs.id });
-        });
-        setDocuments(array);
-        setIsLoading(false);
-    }
 
     useEffect(() => {
+        // This function runs only one time we have to reload to fetch latest users
+        const readDocs = async () => {
+            let array = [];
+
+            const querySnapshot = await getDocs(collectionRef);
+            querySnapshot.forEach(docs => {
+                array.push({ ...docs.data(), id: docs.id });
+            });
+            setDocuments(array);
+            setIsLoading(false);
+        }
+
         readDocs();
-    }, [])
+    }, [collectionRef])
+
+    // When ever collection in the firebase change this function runs automatically and set documents state to the lates one. So we don't have to re to fetch latest users
+    onSnapshot(collectionRef, (snapshot) => {
+        let array = [];
+        snapshot.docs.forEach((doc) => {
+            array.push({ ...doc.data(), id: doc.id })
+        })
+        setDocuments(array);
+
+    })
 
     // Function for deleting documents
     const deleteDocument = async (document) => {
