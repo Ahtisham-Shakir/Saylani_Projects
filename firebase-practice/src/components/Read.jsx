@@ -46,11 +46,12 @@ const Read = () => {
 
             showAlert('success', 'User has been deleted successfully');
 
-            let newArray = documents.filter((doc) => {
-                return document.id !== doc.id;
-            })
+            // Commented because onSnapshot fetch users whenever we delete user and setDocuments to latest users
+            // let newArray = documents.filter((doc) => {
+            //     return document.id !== doc.id;
+            // })
 
-            setDocuments(newArray);
+            // setDocuments(newArray);
 
         } catch (error) {
             console.log(error);
@@ -92,3 +93,32 @@ const Read = () => {
 }
 
 export default Read
+
+
+// this will give us snapshot only if author == Shaam
+// const q = query(collectionRef, where('author','==','Shaam'), orderBy('createdAt','asc'));
+// onSnapshot(q, (snapshot) => {
+//     let array = [];
+//     snapshot.docs.forEach((doc) => {
+//         array.push({ ...doc.data(), id: doc.id })
+//     })
+//     console.log(array);
+
+// })
+
+
+// get single document
+// const docRef = doc('firestore','collectionName', 'id of that document');
+// getDoc(docRef)
+// .then((doc)=>{
+// console.log(doc.data(),doc.id);
+// })
+
+// Updating Document
+// const docRef = doc('firestore','collectionName', 'id of that document');
+// updateDoc(docRef,{
+// title: 'updated title'
+// })
+// .then((doc)=>{
+// console.log(doc.data(),doc.id);
+// })
