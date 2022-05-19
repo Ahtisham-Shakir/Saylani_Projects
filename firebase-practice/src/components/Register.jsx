@@ -38,7 +38,12 @@ const Register = ()=> {
     // Function to logout user
     const logoutUser = (e)=>{
         e.preventDefault();
-        
+        signOut(auth)
+        .then(()=>{
+            showAlert('success','Logout Successfully!');
+        }).catch((error)=>{
+            showAlert('error',error.message);
+        })
     }
 
     // Function to verify email
